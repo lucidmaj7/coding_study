@@ -19,11 +19,11 @@ char getSpacialChar(char* en)
 void decode(char* enc)
 {
 
-	printf("%s\n",enc);
+//rintf("%s\n",enc);
 	
 	for(int i = 0 ; i< MAX_LEN; i++)
 	{
-		if(enc[i] == '%')
+		if(enc[i] == '%' && enc[i+1] !='%')
 		{
 			char temp = getSpacialChar(&enc[i]);	
 			if(temp!=0)
@@ -59,8 +59,9 @@ int main(void)
 		scanf("%s\n", encodedstr[i]);
 		decode(encodedstr[i]);
 		printf("\n");
-	}
+	
+}
+}
 	
 
-	return 0;
-}
+
