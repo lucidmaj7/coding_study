@@ -33,6 +33,9 @@ void decode(char* enc)
 				printf("%c", enc[i]);
 				i++;
 				i++;
+			}else
+			{
+				printf("%c", enc[i]);
 			}
 		}
 		else
