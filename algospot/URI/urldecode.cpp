@@ -23,7 +23,7 @@ void decode(char* enc)
 	
 	for(int i = 0 ; i< MAX_LEN; i++)
 	{
-		if(enc[i] == '%' && enc[i+1] !='%')
+		if(enc[i] == '%' && enc[i+1] !='%' && i+2 <MAX_LEN )
 		{
 			char temp = getSpacialChar(&enc[i]);	
 			if(temp!=0)
