@@ -11,8 +11,12 @@ char getSpacialChar(char* en)
 
 	char temp[4]= {0,};
 	memcpy(temp, &en[1],2);
+		
+	int a=	strtol(temp, NULL,16);
+
+	return a;
 	
-	return	strtol(temp, NULL,16);
+
 
 }
 
@@ -20,10 +24,10 @@ void decode(char* enc)
 {
 
 //rintf("%s\n",enc);
-	
-	for(int i = 0 ; i< MAX_LEN; i++)
+	int len = strlen(enc);
+	for(int i = 0 ; i<len; i++)
 	{
-		if(enc[i] == '%' && enc[i+1] !='%' && i+2 <MAX_LEN )
+		if(enc[i] == '%' && enc[i+1] !='%' && i+2 <len )
 		{
 			char temp = getSpacialChar(&enc[i]);	
 			if(temp!=0)
@@ -43,9 +47,8 @@ void decode(char* enc)
 	}
 
 	return;
+
 }
-
-
 int main(void)
 {
 	int ncase = 0;
@@ -66,5 +69,4 @@ int main(void)
 }
 }
 	
-
 
